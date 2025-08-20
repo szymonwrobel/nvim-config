@@ -8,8 +8,8 @@ return {
 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader>ff', builtin.find_files,
-      { desc = 'Telescope find files' })
+      { desc = 'Telescope - Find files' })
     vim.keymap.set('n', '<leader>fs', builtin.live_grep,
-      { desc = 'Telescope live grep' })
+      { desc = 'Telescope - Live grep' })
   end
 }

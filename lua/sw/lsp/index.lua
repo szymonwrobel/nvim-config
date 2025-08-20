@@ -23,8 +23,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end
 })
 
-vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
-vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next, {
+  desc = "Go to next diagnostic",
+})
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, {
+  desc = "Go to previous diagnostic",
+})
 
 vim.diagnostic.config({
   virtual_text = true, -- it's false by default
