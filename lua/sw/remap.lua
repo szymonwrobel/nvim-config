@@ -39,40 +39,46 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], {
   desc = "Delete without overwriting the default register"
 })
 
+-----------------------------
+-- Split window management --
+-----------------------------
 -- split window navigation
-vim.keymap.set("n", "<C-s>x", "<C-w>s", {
+vim.keymap.set("n", "<leader>sx", "<C-w>s", {
   desc = "Split window horizontally ↓"
 })
-vim.keymap.set("n", "<C-s>d", "<C-w>v", {
+vim.keymap.set("n", "<leader>sd", "<C-w>v", {
   desc = "Split window vertically →"
 })
-vim.keymap.set("n", "<C-h>", "<C-w>h", {
+vim.keymap.set("n", "<leader>sh", "<C-w>h", {
   desc = "Move to the left window"
 })
-vim.keymap.set("n", "<C-j>", "<C-w>j", {
+vim.keymap.set("n", "<leader>sj", "<C-w>j", {
   desc = "Move to the bottom window"
 })
-vim.keymap.set("n", "<C-k>", "<C-w>k", {
+vim.keymap.set("n", "<leader>sk", "<C-w>k", {
   desc = "Move to the top window"
 })
-vim.keymap.set("n", "<C-l>", "<C-w>l", {
+vim.keymap.set("n", "<leader>sl", "<C-w>l", {
   desc = "Move to the right window"
 })
 -- split window resizing
-vim.keymap.set("n", "<C-s>=", "<C-w>+", {
+vim.keymap.set("n", "<leader>s=", "<C-w>+", {
   desc = "Increase window height"
 })
-vim.keymap.set("n", "<C-s>-", "<C-w>-", {
+vim.keymap.set("n", "<leader>s-", "<C-w>-", {
   desc = "Decrease window height"
 })
-vim.keymap.set("n", "<C-s>.", "<C-w>>", {
+vim.keymap.set("n", "<leader>s.", "<C-w>>", {
   desc = "Increase window width"
 })
-vim.keymap.set("n", "<C-s>,", "<C-w><", {
+vim.keymap.set("n", "<leader>s,", "<C-w><", {
   desc = "Decrease window width"
 })
 
--- format file
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {
-  desc = "Format file with LSP"
+vim.keymap.set({ "v", "i" }, "<C-c>", "<Esc>", {
+  desc = "Exit to normal mode"
+})
+
+vim.keymap.set({ "n", "v" }, "<leader>yp", "<cmd>let @+=@%<CR>", {
+  desc = "Copy relative file path to clipboard"
 })

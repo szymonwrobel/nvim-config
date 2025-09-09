@@ -3,7 +3,7 @@ return {
   version = '*',
   config = function()
     require("toggleterm").setup({
-      size = 8,
+      size = 16,
       open_mapping = [[<C-\>]],
       shade_terminals = true,
       direction = "horizontal",
