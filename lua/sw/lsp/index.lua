@@ -1,6 +1,7 @@
 require("sw.lsp.biome")
 require("sw.lsp.lua")
 require("sw.lsp.typescript")
+require("sw.lsp.kotlin")
 
 -- pressing K on hovered symbol will toggle the hover window
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -45,4 +46,14 @@ vim.diagnostic.config({
       )
     end,
   },
+})
+
+-- format file
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format, {
+  desc = "Format file with LSP"
+})
+
+-- references
+vim.keymap.set("n", "<leader>lr", "<cmd>Telescope lsp_references<CR>", {
+  desc = "Show references in Telescope"
 })
