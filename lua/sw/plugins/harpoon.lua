@@ -15,6 +15,20 @@ return {
       desc = "Harpoon - Toggle quick menu",
     })
 
+    vim.keymap.set("n", "<leader>hrh", function() harpoon:list():remove_at(1) end, {
+      desc = "Harpoon - Remove first file from the list",
+    })
+    vim.keymap.set("n", "<leader>hrj", function() harpoon:list():remove_at(2) end, {
+      desc = "Harpoon - Remove second file from the list",
+    })
+    vim.keymap.set("n", "<leader>hrk", function() harpoon:list():remove_at(3) end, {
+      desc = "Harpoon - Remove third file from the list",
+    })
+    vim.keymap.set("n", "<leader>hrl", function() harpoon:list():remove_at(4) end, {
+      desc = "Harpoon - Remove fourth file from the list",
+    })
+
+
     vim.keymap.set("n", "<leader>hp", function() harpoon:list():prev({ ui_nav_wrap = true }) end, {
       desc = "Harpoon - Open previous file in list",
     })
