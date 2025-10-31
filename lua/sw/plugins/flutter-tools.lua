@@ -8,7 +8,7 @@ return {
   config = function()
     require('flutter-tools').setup({})
     require("telescope").load_extension("flutter")
-    vim.keymap.set('n', '<leader>pf', '<cmd>Telescope flutter commands<CR>',
+    vim.keymap.set('n', '<leader><leader>f', '<cmd>Telescope flutter commands<CR>',
       { noremap = true, silent = true, desc = "Open flutter commands windows" })
   end
 }
