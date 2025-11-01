@@ -11,21 +11,16 @@ return {
   config = function()
     local cmp = require("cmp")
     cmp.setup({
-      snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      },
       mapping = {
         ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { 'i' }),
         ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { 'i' }),
         ['<C-p>'] = cmp.mapping.select_prev_item(),
         ['<C-n>'] = cmp.mapping.select_next_item(),
         -- ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-        -- ["<C-e>"] = cmp.mapping.close(),
+        ["<C-e>"] = cmp.mapping.close(),
         ["<CR>"] = cmp.mapping({
           i = function(fallback)
-            if cmp.visible() and cmp.get_active_entry() then
+            if cmp.visible() then
               cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
             else
               fallback()
@@ -35,15 +30,8 @@ return {
           c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
         }),
       },
-      ['<C-Space>'] = function()
-        if cmp.visible() then
-          cmp.close()
-        end
-      end,
-
       sources = {
         { name = "nvim_lsp" },
-        { name = "luasnip" },
       },
       sorting = {
         comparators = {
